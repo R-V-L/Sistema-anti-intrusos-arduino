@@ -26,12 +26,13 @@ delay(1);
 digitalWrite(trigger, LOW);
 duracion = pulseIn(echo, HIGH);
 distancia = (duracion/2) / 29.1;
-if (distancia >= 80 || distancia <= 0){
+if (distancia >= 60 || distancia <= 0){
 digitalWrite(buzzer, LOW);
 
 }
 else {
 Serial.println("Intruso detectado");
+Serial.println(distancia);
 tone(buzzer, 400); // play 400 Hz tone for 500 ms
 delay(500);
 tone(buzzer, 800); // play 800Hz tone for 500ms
